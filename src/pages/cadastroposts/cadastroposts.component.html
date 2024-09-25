@@ -1,0 +1,22 @@
+<header>
+    <h1>BLOG</h1>
+</header>
+<main>
+    <section class="form-section">
+        <h2>Criar Novo Post</h2>
+        <form #postForm="ngForm" (ngSubmit)="onSubmit(postForm)">
+            <div>
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" name="titulo" [(ngModel)]="post.titulo" required>
+            </div>
+
+            <div>
+                <label for="post">Conteúdo:</label>
+                <textarea id="post" name="post" rows="10" [(ngModel)]="post.post" required></textarea>
+            </div>
+
+            <button type="submit" [disabled]="postForm.invalid">Salvar Post</button>
+        </form>
+    </section>
+</main>
+
