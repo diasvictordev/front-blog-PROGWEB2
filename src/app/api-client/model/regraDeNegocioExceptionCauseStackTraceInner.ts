@@ -10,8 +10,14 @@
  */
 
 
-export interface AuthRequestDTO { 
-    email?: string;
-    senha?: string;
+export interface RegraDeNegocioExceptionCauseStackTraceInner { 
+    classLoaderName?: string;
+    moduleName?: string;
+    moduleVersion?: string;
+    methodName?: string;
+    fileName?: string;
+    lineNumber?: number;
+    nativeMethod?: boolean;
+    className?: string;
 }
 

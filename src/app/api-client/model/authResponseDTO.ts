@@ -10,8 +10,8 @@
  */
 
 
-export interface AuthRequestDTO { 
-    email?: string;
-    senha?: string;
+export interface AuthResponseDTO { 
+    token?: string;
+    id?: number;
 }
 

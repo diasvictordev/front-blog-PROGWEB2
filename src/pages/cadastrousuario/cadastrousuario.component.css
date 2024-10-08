@@ -1,13 +1,11 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
 }
 
 main {
     max-width: 600px;
-    margin: 50px auto;
+    margin: 50px auto; /* Você pode ajustar esta margem se quiser menos espaço em cima */
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
@@ -16,7 +14,8 @@ main {
 
 h1 {
     text-align: center;
-    margin-bottom: 20px;
+    margin: 0 0 20px 0; /* Remove a margem superior */
+    padding: 20px 0; /* Adiciona um pouco de padding, se necessário */
 }
 
 form {
@@ -45,5 +44,5 @@ button {
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #0056b3;
 }

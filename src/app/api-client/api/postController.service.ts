@@ -274,7 +274,7 @@ export class PostControllerService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
-                //transferCache: localVarTransferCache,
+               // transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -333,7 +333,7 @@ export class PostControllerService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
-                //transferCache: localVarTransferCache,
+               // transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -406,7 +406,7 @@ export class PostControllerService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
-                //transferCache: localVarTransferCache,
+                // transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );

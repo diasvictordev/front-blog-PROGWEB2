@@ -1,5 +1,6 @@
 <header>
-    <h1>BLOG</h1>
+    <h1>Blog</h1>
+    <button class="logout" (click)="logout()">Sair</button>
 </header>
 <main>
     <section class="form-section">
@@ -17,6 +18,9 @@
 
             <button type="submit" [disabled]="postForm.invalid">Salvar Post</button>
         </form>
+
+        <button class="create-post" (click)="navigateToPosts()">Ver Posts</button>
+
+        <app-toast [message]="toastMessage" [isSuccess]="isSuccess"></app-toast>
     </section>
 </main>
-

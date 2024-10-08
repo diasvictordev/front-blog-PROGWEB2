@@ -9,20 +9,26 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from '../pages/login/login.component';
 import { CadastroPostsComponent } from 'src/pages/cadastroposts/cadastroposts.component';
 import { RouterModule } from '@angular/router';
+import { ToastcomponentComponent } from './toastcomponent/toastcomponent.component';
+import { ListagempostsComponent } from 'src/pages/listagemposts/listagemposts.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
     CadastrousuarioComponent,
     LoginComponent,
-    CadastroPostsComponent
+    CadastroPostsComponent,
+    ToastcomponentComponent,
+    ListagempostsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ApiModule,
     FormsModule, 
-    HttpClientModule
+    HttpClientModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

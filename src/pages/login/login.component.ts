@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { UsuarioControllerService } from 'src/app/api-client'; // Atualize o caminho conforme necessário
 import { Router } from '@angular/router';
-import { CadastroPostsComponent } from '../cadastroposts/cadastroposts.component';
+import { AuthRequestDTO, AuthResponseDTO } from 'src/app/api-client'; // Importar DTOs adequados
 
 @Component({
   selector: 'app-login',
@@ -10,28 +10,34 @@ import { CadastroPostsComponent } from '../cadastroposts/cadastroposts.component
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  loginData = { email: '', senha: '' };
+  loginData: AuthRequestDTO = { email: '', senha: '' }; // Usando AuthRequestDTO
   errorMessage: string | null = null;
 
   constructor(private authService: UsuarioControllerService, private router: Router) {}
 
-  onSubmit(): void {
+  onSubmit(form: NgForm): void {
+    if (form.invalid) {
+      return; // Evita o envio se o formulário for inválido
+    }
+
     this.authService.login(this.loginData)
       .subscribe({
-        next: (response: any) => {
-          console.log('Login bem-sucedido', response);
-          if (response && response.usuarioId && response.token) {
-            localStorage.setItem('usuarioId', response.usuarioId); // Armazena o ID do usuário
-            localStorage.setItem('token', response.token); // Armazena o token
-            this.router.navigate(['/cadastroposts']); // Redireciona
-          } else {
-            console.error('ID do usuário ou token não encontrados na resposta');
-          }
+        next: (response: AuthResponseDTO) => {
+          this.handleLoginResponse(response);
         },
-        error: (error) => {
-          console.error('Erro no login', error);
+        error: () => {
           this.errorMessage = 'Usuário ou senha inválidos';
         }
       });
+  }
+
+  private handleLoginResponse(response: AuthResponseDTO): void {
+    if (response && response.id && response.token) {
+      localStorage.setItem('usuarioId', response.id.toString()); // Armazena o ID do usuário
+      localStorage.setItem('token', response.token); // Armazena o token
+      this.router.navigate(['/cadastroposts']); // Redireciona
+    } else {
+      this.errorMessage = 'Resposta de login inválida';
+    }
   }
 }

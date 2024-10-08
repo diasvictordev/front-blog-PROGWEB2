@@ -158,7 +158,7 @@ export class CommentControllerService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
-                // transferCache: localVarTransferCache,
+                //transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -221,7 +221,7 @@ export class CommentControllerService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
-                // transferCache: localVarTransferCache,
+                //transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -284,7 +284,7 @@ export class CommentControllerService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
-                // transferCache: localVarTransferCache,
+                //transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -347,7 +347,7 @@ export class CommentControllerService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
-                // transferCache: localVarTransferCache,
+                //transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );

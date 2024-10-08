@@ -20,6 +20,10 @@ import { Observable }                                        from 'rxjs';
 // @ts-ignore
 import { AuthRequestDTO } from '../model/authRequestDTO';
 // @ts-ignore
+import { AuthResponseDTO } from '../model/authResponseDTO';
+// @ts-ignore
+import { RegraDeNegocioException } from '../model/regraDeNegocioException';
+// @ts-ignore
 import { Usuario } from '../model/usuario';
 
 // @ts-ignore
@@ -160,7 +164,7 @@ export class UsuarioControllerService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
-               // transferCache: localVarTransferCache,
+                // transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -223,7 +227,7 @@ export class UsuarioControllerService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
-                //transferCache: localVarTransferCache,
+                // transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -286,7 +290,7 @@ export class UsuarioControllerService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
-                //transferCache: localVarTransferCache,
+                // transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );
@@ -352,14 +356,15 @@ export class UsuarioControllerService {
     }
 
     /**
+     * Método utilizado para realizar a inclusão de um entidade
      * @param authRequestDTO 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public login(authRequestDTO: AuthRequestDTO, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: '*/*', context?: HttpContext, transferCache?: boolean}): Observable<string>;
-    public login(authRequestDTO: AuthRequestDTO, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: '*/*', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<string>>;
-    public login(authRequestDTO: AuthRequestDTO, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: '*/*', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<string>>;
-    public login(authRequestDTO: AuthRequestDTO, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: '*/*', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+    public login(authRequestDTO: AuthRequestDTO, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<AuthResponseDTO>;
+    public login(authRequestDTO: AuthRequestDTO, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<AuthResponseDTO>>;
+    public login(authRequestDTO: AuthRequestDTO, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<AuthResponseDTO>>;
+    public login(authRequestDTO: AuthRequestDTO, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (authRequestDTO === null || authRequestDTO === undefined) {
             throw new Error('Required parameter authRequestDTO was null or undefined when calling login.');
         }
@@ -370,7 +375,7 @@ export class UsuarioControllerService {
         if (localVarHttpHeaderAcceptSelected === undefined) {
             // to determine the Accept header
             const httpHeaderAccepts: string[] = [
-                '*/*'
+                'application/json'
             ];
             localVarHttpHeaderAcceptSelected = this.configuration.selectHeaderAccept(httpHeaderAccepts);
         }
@@ -410,7 +415,7 @@ export class UsuarioControllerService {
         }
 
         let localVarPath = `/api/usuario/login`;
-        return this.httpClient.request<string>('post', `${this.configuration.basePath}${localVarPath}`,
+        return this.httpClient.request<AuthResponseDTO>('post', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 body: authRequestDTO,
@@ -418,7 +423,7 @@ export class UsuarioControllerService {
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,
                 observe: observe,
-                // transferCache: localVarTransferCache,
+                //transferCache: localVarTransferCache,
                 reportProgress: reportProgress
             }
         );

@@ -8,10 +8,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { RegraDeNegocioExceptionCauseStackTraceInner } from './regraDeNegocioExceptionCauseStackTraceInner';
 
 
-export interface AuthRequestDTO { 
-    email?: string;
-    senha?: string;
+export interface RegraDeNegocioExceptionCauseSuppressedInner { 
+    stackTrace?: Array<RegraDeNegocioExceptionCauseStackTraceInner>;
+    message?: string;
+    localizedMessage?: string;
 }
 

@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 README.md
 api.module.ts
 api/api.ts
@@ -11,9 +10,14 @@ encoder.ts
 git_push.sh
 index.ts
 model/authRequestDTO.ts
+model/authResponseDTO.ts
 model/comment.ts
 model/models.ts
 model/post.ts
+model/regraDeNegocioException.ts
+model/regraDeNegocioExceptionCause.ts
+model/regraDeNegocioExceptionCauseStackTraceInner.ts
+model/regraDeNegocioExceptionCauseSuppressedInner.ts
 model/usuario.ts
 param.ts
 variables.ts
