@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Post, PostControllerService } from 'src/app/api-client';
+import { PostControllerService } from 'src/app/api-client';
+import { Post } from 'src/app';
 import { Router } from '@angular/router';
 
 @Component({
@@ -18,7 +19,7 @@ export class ListagempostsComponent implements OnInit {
     this.fetchPosts();
   }
 
-  fetchPosts(): void {
+  /*fetchPosts(): void {
     this.postService.listarPosts().subscribe(
       (data: any) => {
         const reader = new FileReader();
@@ -36,7 +37,37 @@ export class ListagempostsComponent implements OnInit {
         console.error('Erro ao buscar posts:', error);
       }
     );
-  }
+  }*/
+
+    fetchPosts(): void {
+      this.postService.listarPosts().subscribe(
+        (data: any) => {
+          const reader = new FileReader();
+          reader.onload = () => {
+            const jsonData = JSON.parse(reader.result as string);
+            console.log('Posts recebidos:', jsonData);
+    
+            if (Array.isArray(jsonData)) {
+              this.posts = jsonData;
+            } else {
+              console.error('A resposta não é um array:', jsonData);
+            }
+          };
+          reader.readAsText(data); // Lê o Blob como texto
+        },
+        (error: any) => {
+          console.error('Erro ao buscar posts:', error);
+        }
+      );
+    }
+    
+    
+    
+  
+    
+    
+    
+  
 
   deletePost(postId: number): void {
     if (confirm('Tem certeza que deseja deletar este post?')) {

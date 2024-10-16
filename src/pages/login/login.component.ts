@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { UsuarioControllerService } from 'src/app/api-client'; // Atualize o caminho conforme necessário
+import { UsuarioControllerService } from 'src/app/api-client'; 
 import { Router } from '@angular/router';
-import { AuthRequestDTO, AuthResponseDTO } from 'src/app/api-client'; // Importar DTOs adequados
+import { AuthRequestDTO, AuthResponseDTO } from 'src/app/api-client'; 
 
 @Component({
   selector: 'app-login',
@@ -10,14 +10,16 @@ import { AuthRequestDTO, AuthResponseDTO } from 'src/app/api-client'; // Importa
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  loginData: AuthRequestDTO = { email: '', senha: '' }; // Usando AuthRequestDTO
+  loginData: AuthRequestDTO = { email: '', senha: '' };
+  toastMessage: string | null = null;
+  isSuccess: boolean = true;
   errorMessage: string | null = null;
 
   constructor(private authService: UsuarioControllerService, private router: Router) {}
 
   onSubmit(form: NgForm): void {
     if (form.invalid) {
-      return; // Evita o envio se o formulário for inválido
+      return; 
     }
 
     this.authService.login(this.loginData)
@@ -27,15 +29,26 @@ export class LoginComponent {
         },
         error: () => {
           this.errorMessage = 'Usuário ou senha inválidos';
+          this.showToast('Usuário ou senha inválidos', false);
         }
       });
   }
 
+  showToast(message: string, isSuccess: boolean) {
+    this.toastMessage = message;
+    this.isSuccess = isSuccess;
+
+    setTimeout(() => {
+      this.toastMessage = null;
+    }, 3000);
+  }
+
+
   private handleLoginResponse(response: AuthResponseDTO): void {
     if (response && response.id && response.token) {
-      localStorage.setItem('usuarioId', response.id.toString()); // Armazena o ID do usuário
-      localStorage.setItem('token', response.token); // Armazena o token
-      this.router.navigate(['/cadastroposts']); // Redireciona
+      localStorage.setItem('usuarioId', response.id.toString());
+      localStorage.setItem('token', response.token);
+      this.router.navigate(['/cadastroposts']); 
     } else {
       this.errorMessage = 'Resposta de login inválida';
     }

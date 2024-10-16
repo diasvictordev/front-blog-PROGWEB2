@@ -10,8 +10,6 @@
           <input type="password" id="senha" name="senha" [(ngModel)]="loginData.senha" required />
       </div>
       <button type="submit" [disabled]="!loginForm.valid">Entrar</button>
-      <div *ngIf="errorMessage" class="error-message">
-          {{ errorMessage }}
-      </div>
   </form>
+  <app-toast [message]="toastMessage" [isSuccess]="isSuccess"></app-toast>
 </div>

@@ -6,14 +6,20 @@
     <section class="post-list">
         <h2>Posts</h2>
         <button class="create-post" (click)="navigateToCreatePost()">Criar Post</button>
-        <div id="postsContainer">
-            <div *ngFor="let post of posts" class="post-card">
-                <h3>{{ post.titulo }}</h3>
-                <p>{{ post.post }}</p>
-                <p class="author">Autor: <span class="author-name">{{ post.usuario?.nome ?? 'Desconhecido' }}</span></p>
-                <button class="delete-button" (click)="deletePost(post.id!)" 
-                        *ngIf="post.usuario?.id === loggedUserId">Deletar</button>
-            </div>
-        </div>
-    </section>
-</main>
+<div id="postsContainer">
+    <div *ngFor="let post of posts" class="post-card">
+        <h3>{{ post.titulo }}</h3>
+        <p>{{ post.post }}</p>
+        <p class="author">Autor: <span class="author-name">{{ post.usuario?.nome ?? 'Desconhecido' }}</span></p>
+        <button class="delete-button" (click)="deletePost(post.id!)" 
+                *ngIf="post.usuario?.id === loggedUserId">Deletar</button>
+        
+                <div class="audio-player" *ngIf="post.audioUrl">
+                    <audio controls class="styled-audio">
+                        <source [src]="post.audioUrl" type="audio/wav">
+                        Seu navegador não suporta o elemento de áudio.
+                    </audio>
+                </div>
+                
+    </div>
+</div>
