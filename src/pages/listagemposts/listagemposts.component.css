@@ -6,19 +6,19 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #4e73df;
     color: white;
     padding: 15px;
     text-align: center;
-    position: relative; /* Para permitir o posicionamento absoluto do botão */
+    position: relative; 
 }
 
 header button.logout {
     position: absolute;
-    right: 20px; /* Ajuste conforme necessário */
-    top: 50%; /* Centraliza verticalmente */
-    transform: translateY(-50%); /* Ajusta para o centro */
-    background-color: #dc3545; /* Vermelho para sair */
+    right: 20px; 
+    top: 50%;
+    transform: translateY(-50%); 
+    background-color: #dc3545; 
     color: white;
     border: none;
     padding: 8px 12px;
@@ -28,7 +28,7 @@ header button.logout {
 }
 
 header button.logout:hover {
-    background-color: #c82333; /* Vermelho escuro */
+    background-color: #c82333; 
 }
 
 
@@ -95,46 +95,44 @@ h2 {
     background-color: #d32f2f;
 }
 
-/* Estilos gerais para os botões */
 button {
-    background-color: #007bff; /* Azul padrão */
+    background-color: #007bff; 
     color: white;
     border: none;
     padding: 10px 20px;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Transição suave */
-    margin: 5px 0; /* Margem para espaçamento */
+    transition: background-color 0.3s ease;
+    margin: 5px 0; 
 }
 
-/* Efeito de hover para botões */
 button:hover {
-    background-color: #0056b3; /* Azul mais escuro */
+    background-color: #0056b3; 
 }
 
-/* Estilos específicos para botões de sair e criar post */
+
 button.logout {
-    background-color: #dc3545; /* Vermelho para sair */
+    background-color: #dc3545; 
 }
 
 button.logout:hover {
-    background-color: #c82333; /* Vermelho escuro */
+    background-color: #c82333; 
 }
 
 button.create-post {
-    background-color: #4CAF50; /* Verde para criar post */
+    background-color: #4CAF50; 
 }
 
 button.create-post:hover {
-    background-color: #218838; /* Verde escuro */
+    background-color: #218838; 
 }
 
-/* Estilos para botões em formulários */
+
 form button {
-    width: 100%; /* Botões ocupam toda a largura no formulário */
+    width: 100%; 
 }
 
-/* Adicionando um pouco de espaçamento para os botões na seção de post */
+
 .post-list button,
 .form-section button {
     margin-top: 10px;
@@ -155,7 +153,7 @@ form button {
     width: 100%;
     height: 40px;
     outline: none;
-    background: transparent; /* Remover fundo padrão */
+    background: transparent; 
 }
 
 .styled-audio::-webkit-media-controls-panel {
@@ -182,28 +180,92 @@ form button {
 
 .styled-audio::-webkit-media-controls-current-time-display,
 .styled-audio::-webkit-media-controls-time-remaining-display {
-    color: #4CAF50; /* Cor do texto de tempo */
+    color: #4CAF50; 
 }
 
 .styled-audio::-webkit-media-controls-progress-container {
-    background: #e0e0e0; /* Cor da barra de carregamento */
+    background: #e0e0e0; 
     border-radius: 10px;
     height: 5px;
 }
 
 .styled-audio::-webkit-media-controls-mute-button {
-    background: none; /* Remover fundo padrão */
+    background: none; 
 }
 
 .styled-audio::-webkit-media-controls-volume-slider::-webkit-slider-runnable-track {
-    background: #4CAF50; /* Cor da barra de volume */
+    background: #4CAF50; 
     border-radius: 10px;
 }
 
 .styled-audio::-webkit-media-controls-volume-slider::-webkit-slider-thumb {
-    background: #fff; /* Cor do botão do volume */
-    border: 2px solid #4CAF50; /* Borda do botão */
+    background: #fff; 
+    border: 2px solid #4CAF50; 
     border-radius: 50%;
     width: 15px;
     height: 15px;
+} 
+
+
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: lightblue;
+}
+
+.container {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    width: 90%;
+    max-width: 1200px;
+}
+
+.article {
+    background-color: #fff;
+    border: 1px solid black;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+}
+
+.article h2 {
+    font-size: 1.25em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.article p {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.article .info {
+    font-size: 0.8em;
+    color: #aaa;
+    display: flex;
+    gap: 5px;
+}
+
+.article .comments{
+    font-size: 0.8em;
+    color: #aaa;
+    display: flex;
+    gap: 5px;
+    margin-top: 15px;
+}
+
+.article .number-comments{
+    margin-top: 3px;
+} */

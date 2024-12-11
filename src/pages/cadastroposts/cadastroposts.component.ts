@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Post, PostControllerService } from 'src/app/api-client';
+import { Post, PostControllerService } from 'api';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -46,6 +46,30 @@ export class CadastroPostsComponent {
       (error: any) => {
         console.error('Erro ao criar post:', error);
         this.showToast('Erro ao criar post.', false);
+      }
+    );
+  }
+
+  corrigirOrtografia(post: string): void {
+    this.postService.corrigirOrtografia(post).subscribe(
+      (correctionResponse: any) => {
+        // Aqui estamos lidando com o tipo 'Blob'
+        const reader = new FileReader();
+        
+        // Usamos o FileReader para ler o conteúdo do Blob
+        reader.onloadend = () => {
+          // O resultado é a string corrigida, agora podemos atualizar o post
+          const correctedText: string = reader.result as string;
+          this.post.post = correctedText; // Atualiza o texto corrigido
+          this.showToast('Ortografia corrigida com sucesso!', true);
+        };
+        
+        // Ler o Blob como texto
+        reader.readAsText(correctionResponse);
+      },
+      (error: any) => {
+        console.error('Erro ao corrigir ortografia:', error);
+        this.showToast('Erro ao corrigir ortografia.', false);
       }
     );
   }

@@ -13,6 +13,8 @@ import { ToastcomponentComponent } from './toastcomponent/toastcomponent.compone
 import { ListagempostsComponent } from 'src/pages/listagemposts/listagemposts.component';
 import { CommonModule } from '@angular/common';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,

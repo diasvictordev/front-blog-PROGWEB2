@@ -15,7 +15,7 @@
                 <label for="post">Conteúdo:</label>
                 <textarea id="post" name="post" rows="10" [(ngModel)]="post.post" required></textarea>
             </div>
-
+            <button type="button" (click)="post.post && corrigirOrtografia(post.post)">Corrigir Ortografia</button>
             <button type="submit" [disabled]="postForm.invalid">Salvar Post</button>
         </form>
 

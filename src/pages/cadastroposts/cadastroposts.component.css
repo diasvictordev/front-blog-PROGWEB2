@@ -123,7 +123,7 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #4e73df;
     color: white;
     padding: 15px;
     text-align: center;
@@ -160,7 +160,7 @@ form input, form textarea {
 }
 
 form button {
-    background-color: #28a745;
+    background-color: #858796;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -220,39 +220,52 @@ button {
     padding: 10px 20px;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Transição suave */
+    transition: background-color 0.3s ease;
     margin: 5px 0; /* Margem para espaçamento */
-}
-
-/* Efeito de hover para botões */
-button:hover {
+  }
+  
+  /* Efeito de hover para botões */
+  button:hover {
     background-color: #0056b3; /* Azul mais escuro */
-}
-
-/* Estilos específicos para botões de sair e criar post */
-button.logout {
+  }
+  
+  /* Estilos específicos para botões de sair e criar post */
+  button.logout {
     background-color: #dc3545; /* Vermelho para sair */
-}
-
-button.logout:hover {
+  }
+  
+  button.logout:hover {
     background-color: #c82333; /* Vermelho escuro */
-}
-
-button.create-post {
+  }
+  
+  button.create-post {
     background-color: #28a745; /* Verde para criar post */
-}
-
-button.create-post:hover {
+  }
+  
+  button.create-post:hover {
     background-color: #218838; /* Verde escuro */
-}
-
-/* Estilos para botões em formulários */
-form button {
-    width: 100%; /* Botões ocupam toda a largura no formulário */
-}
-
-/* Adicionando um pouco de espaçamento para os botões na seção de post */
-.post-list button,
-.form-section button {
-    margin-top: 10px;
-}
+  }
+  
+  /* Adiciona espaçamento entre os botões */
+  form button {
+    width: 48%; /* Deixa os botões lado a lado */
+    display: inline-block;
+    margin-right: 2%; /* Margem entre os botões */
+  }
+  
+  button.corrigir {
+    background-color: #ffc107; /* Cor amarela para corrigir */
+  }
+  
+  button.corrigir:hover {
+    background-color: #e0a800; /* Tom mais escuro para hover */
+  }
+  
+  /* Estilos para o botão de logout */
+  button.logout {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  

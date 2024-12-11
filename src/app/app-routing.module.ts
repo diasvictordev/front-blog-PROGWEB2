@@ -4,6 +4,7 @@ import { CadastrousuarioComponent } from '../pages/cadastrousuario/cadastrousuar
 import { LoginComponent } from 'src/pages/login/login.component';
 import { CadastroPostsComponent } from 'src/pages/cadastroposts/cadastroposts.component';
 import { ListagempostsComponent } from 'src/pages/listagemposts/listagemposts.component';
+import { PostpageComponent } from 'src/pages/postpage/postpage.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: "posts",
     component: ListagempostsComponent
+  },
+  {
+    path: "post",
+    component: PostpageComponent
   }
   
 ];

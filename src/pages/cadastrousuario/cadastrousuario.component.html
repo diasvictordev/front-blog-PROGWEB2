@@ -6,7 +6,7 @@
     <title>Cadastro</title>
     <link rel="stylesheet" href="cadastrousuario.component.css">
 </head>
-<body>
+<!-- <body>
     <main>
         <h1>Cadastro no Blog</h1>
         <form id="registrationForm" (ngSubmit)="onSubmit(registrationForm)" #registrationForm="ngForm">
@@ -27,6 +27,57 @@
           
           
     </main>
+
+</body> -->
+
+<body class="bg-gradient-primary">
+
+    <div class="container">
+
+        <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0">
+                <!-- Nested Row within Card Body -->
+                <div class="row">
+                    <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+                    <div class="col-lg-7">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">Cadastre-se no BLOG</h1>
+                            </div>
+                            <form class="user" id="registrationForm" (ngSubmit)="onSubmit(registrationForm)" #registrationForm="ngForm">
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <label for="nome">Nome:</label>
+                                        <input type="text" class="form-control form-control-user" id="exampleFirstName"
+                                            placeholder="Digite o seu nome" name="nome" ngModel required>
+                                    </div>
+                                    
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email:</label>
+                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="Digite o e-mail" name="email" ngModel required>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <label for="senha">Senha:</label>
+                                        <input type="password" name="senha" class="form-control form-control-user"
+                                        id="exampleInputPassword" placeholder="Digite a senha" ngModel required>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-user btn-block">
+                                    Cadastrar
+                                </button>
+                                <hr>
+                            </form>
+                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 
 </body>
 </html>
